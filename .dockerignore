@@ -1,0 +1,7 @@
+*~
+.*
+*.log
+*.md
+Dockerfile
+node_modules
+package-lock.json
