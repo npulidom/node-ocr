@@ -52,10 +52,10 @@ const ocr = {
 			const outputFile = file.replace('.pdf', '-ocr.pdf')
 
 			// ocrmypdf command
-			var ocr = await exec(`ocrmypdf -l spa --output-type pdfa --optimize 3 --skip-text ${file} ${outputFile}`, { timeout: 900000 })
+			const ocrResult = await exec(`ocrmypdf -l spa --output-type pdfa --optimize 3 --skip-text ${file} ${outputFile}`, { timeout: 900000 })
 
 			// check for ocr errors
-			if (ocr.stderr.length && ocr.stderr.indexOf("ERROR") >= 0) console.info(`ocr failed for ${file}`, ocr)
+			if (ocrResult.stderr.length && ocrResult.stderr.indexOf("ERROR") >= 0) console.info(`ocr failed for ${file}`, ocrResult)
 
 			console.log(`Ocr (process) -> finished OCR on ${file} in %d secs.`, (new Date() - start)/1000)
 
