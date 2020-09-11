@@ -21,20 +21,12 @@ curl - http://localhost:8080/test
 # latest tag
 FROM npulidom/node-ocr
 
-# change root to home
-WORKDIR /home
-
 # node dependcies
 COPY package.json .
-RUN npm install -g pm2 && \
-	npm install --production
+RUN npm install --production
 
 # copy app
 COPY . .
 
-# override entrypoint
-ENTRYPOINT ["/usr/bin/env"]
-
-# start
-CMD pm2-runtime init.js
+# pm2 starts init.js automatically
 ```
