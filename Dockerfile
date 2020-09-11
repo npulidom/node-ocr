@@ -27,9 +27,6 @@ RUN npm install -g pm2 && \
 # copy app
 COPY . .
 
-# create storage folder
-RUN mkdir -p storage
-
 # override entrypoint
 ENTRYPOINT ["/usr/bin/env"]
 
