@@ -3,6 +3,7 @@
 *.log
 *.md
 LICENSE
+build
 Dockerfile
 node_modules
 package-lock.json
