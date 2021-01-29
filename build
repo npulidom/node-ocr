@@ -1,0 +1,8 @@
+#!/bin/sh
+
+TAG="${1:-latest}"
+OPTS="${2:-}"
+
+# build
+docker build $OPTS -t npulidom/node-ocr:$TAG .
+echo "\n-> Build success\n"
