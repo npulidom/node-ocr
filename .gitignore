@@ -1,7 +1,4 @@
-# node
-node_modules
-
-# storage
+*~
 .log
 storage
-
+node_modules
