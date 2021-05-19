@@ -1,7 +1,6 @@
 {
-	"name": "ocr",
-	"license": "unlicense",
-	"private": true,
+	"name": "node-ocr",
+	"license": "UNLICENSED",
 	"scripts": {
 		"server": "pm2 stop init && pm2 start init.js --ignore-watch='.git/* storage/*' --watch && pm2 logs"
 	},
