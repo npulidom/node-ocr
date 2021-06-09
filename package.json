@@ -2,10 +2,10 @@
 	"name": "node-ocr",
 	"license": "UNLICENSED",
 	"scripts": {
-		"server": "pm2 stop init && pm2 start init.js --ignore-watch='.git/* storage/*' --watch && pm2 logs"
+		"server": "pm2 stop init && pm2 delete init && pm2 start init.js --ignore-watch='.git/* storage/*' --watch && pm2 logs"
 	},
 	"dependencies": {
-		"axios": "~0.20.0",
+		"axios": "~0.21.1",
 		"await-exec": "~0.1.2",
 		"express": "~4.17.1",
 		"pdf-to-text": "~0.0.7"
