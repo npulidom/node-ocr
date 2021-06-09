@@ -10,8 +10,11 @@ const pdf   = require('pdf-to-text')
 const STORAGE_DIR     = 'storage'
 const SAMPLE_FILE_URL = 'https://idrh.ku.edu/sites/idrh.ku.edu/files/files/tutorials/pdf/Non-text-searchable.pdf'
 
-const ocr = {
+module.exports = {
 
+	/**
+	 * Init
+	 */
 	init() {
 
 		// create folder if not exists
@@ -23,16 +26,16 @@ const ocr = {
 	/**
 	 * Test request handler
 	 */
-	test: async () => {
+	async test() {
 
 		const file = `${STORAGE_DIR}/sample.pdf`
 
 		// download sample file
-		if (!fs.existsSync(file)) await ocr.downloadFile(SAMPLE_FILE_URL, file)
+		if (!fs.existsSync(file)) await this.downloadFile(SAMPLE_FILE_URL, file)
 
 		try {
 
-			await ocr.process(file)
+			await this.process(file)
 
 			return { status: "ok", file }
 		}
@@ -42,7 +45,7 @@ const ocr = {
 	/**
 	 * OCR & Process
 	 */
-	process: async file => {
+	async process(file) {
 
 		// exec ocrmypdf & pdftotext
 		try {
@@ -82,7 +85,7 @@ const ocr = {
 	/**
 	 * Download file
 	 */
-	downloadFile: async (url, file) => {
+	async downloadFile(url, file) {
 
 		console.log("Ocr (downloadFile) -> requesting file: ", url)
 
@@ -99,5 +102,3 @@ const ocr = {
 		})
 	}
 }
-
-module.exports = ocr
