@@ -1,5 +1,3 @@
-# cell
-
 # OS - Ubuntu Based
 FROM jbarlow83/ocrmypdf
 
@@ -9,7 +7,7 @@ RUN apt update && apt install -y \
 	tesseract-ocr-spa \
 	poppler-utils curl && \
 	# node LTS
-	curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+	curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 	apt install -y nodejs && \
 	# clean
 	apt remove -y curl && \
