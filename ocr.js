@@ -8,7 +8,7 @@ const exec  = require('await-exec')
 const pdf   = require('pdf-to-text')
 
 const STORAGE_DIR     = 'storage'
-const SAMPLE_FILE_URL = 'https://idrh.ku.edu/sites/idrh.ku.edu/files/files/tutorials/pdf/Non-text-searchable.pdf'
+const SAMPLE_FILE_URL = 'https://testrs.gov.cz/smlouva/soubor/201061/non-text-searchable.pdf'
 
 module.exports = {
 

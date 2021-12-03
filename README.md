@@ -12,7 +12,7 @@ docker run -p 8080:80 -d npulidom/node-ocr
 
 Test OCR
 ```curl
-curl - http://localhost:8080/test
+curl -i http://localhost:8080/test
 ```
 
 ### Dockerfile for building
