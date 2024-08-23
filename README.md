@@ -10,7 +10,7 @@ Pull image
 docker pull npulidom/node-ocr
 ```
 
-Run Container [port **8080**]
+Run the container [port **8080**]
 ```sh
 docker run -p 8080:80 -d npulidom/node-ocr
 ```
