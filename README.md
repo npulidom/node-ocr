@@ -5,12 +5,17 @@ node-ocr
 
 ## Usage
 
+Pull image
+```sh
+docker pull npulidom/node-ocr
+```
+
 Run Container [port **8080**]
 ```sh
 docker run -p 8080:80 -d npulidom/node-ocr
 ```
 
-Test OCR
+Test service
 ```curl
 curl -i http://localhost:8080/test
 ```
