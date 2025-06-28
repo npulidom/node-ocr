@@ -12,7 +12,7 @@ RUN apt update && apt install -y \
 	apt autoremove -y
 
 # node LTS
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - && \
 	apt purge nodejs -y && \
 	apt install -y nodejs && \
 	echo "Node Version:" && node -v && \
@@ -23,10 +23,12 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 # change root to home
 WORKDIR /home
 
+# set node env
+ENV NODE_ENV=production
+
 # node dependcies
 COPY package.json .
-RUN npm install -g pm2 && \
-	npm install --production
+RUN npm install --production
 
 # copy app
 COPY . .
@@ -34,5 +36,5 @@ COPY . .
 # override entrypoint
 ENTRYPOINT ["/usr/bin/env"]
 
-# start
-CMD pm2-runtime init.js
+# cmd
+CMD ["node", "init.js"]

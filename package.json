@@ -5,9 +5,9 @@
 		"server": "pm2 stop init && pm2 delete init && pm2 start init.js --ignore-watch='.git/* storage/*' --watch && pm2 logs"
 	},
 	"dependencies": {
-		"axios": "~0.24.0",
+		"axios": "~1.10.0",
 		"await-exec": "~0.1.2",
-		"express": "~4.17.1",
+		"express": "~4.21.2",
 		"pdf-to-text": "~0.0.7"
 	}
 }

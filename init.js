@@ -4,7 +4,7 @@
 
 // ++ Express
 const express = require('express')
-const app     = express()
+const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -21,9 +21,9 @@ async function init() {
 	 * Express
 	 */
 	try       { await app.listen(80) }
-	catch (e) { console.error("Init -> server exception", e.toString()) }
+	catch (e) { console.error('Init -> express-exception:', e) }
 
-	console.log("Init -> server listening")
+	console.log('Init -> server listening')
 
 	/**
 	 * Init OCR
@@ -44,7 +44,8 @@ async function init() {
 	/**
 	 * Not Found
 	 */
-	app.use((req, res, next) => res.status(404).send({ status: "error", "msg": "404 Not Found" }))
+	app.use((req, res, next) => res.status(404).send({ status: 'error', 'msg': '404 Not Found' }))
 }
 
+// run init
 init()
