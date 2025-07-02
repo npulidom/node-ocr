@@ -2,6 +2,8 @@
 
 `NodeJs` + [OcrMyPdf](https://github.com/jbarlow83/OCRmyPDF) + `pdftotext` Docker Image, [based on Ubuntu image](https://github.com/jbarlow83/OCRmyPDF/blob/master/.docker/Dockerfile). Developed for custom OCR node APIs or workers.
 
+[Github Repository](https://github.com/npulidom/node-ocr)
+
 ## Usage
 
 Pull image
